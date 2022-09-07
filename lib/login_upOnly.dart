@@ -10,8 +10,13 @@ class LoginScreenUpOnly extends StatefulWidget {
 class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(child: Column()),
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/login.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
     );
   }
 }
