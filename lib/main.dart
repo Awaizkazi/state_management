@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        unselectedWidgetColor: Colors.grey,  
       ),
-      home: const DropDown(),
+      home: const LoginScreenUpOnly(),
     );
   }
 }

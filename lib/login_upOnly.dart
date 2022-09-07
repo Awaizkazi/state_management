@@ -9,7 +9,8 @@ class LoginScreenUpOnly extends StatefulWidget {
 
 class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
   List<String> emp = ['Employee', 'Client', 'Partner'];
-  String defaultValue = 'Employee';
+  String dropDownValue = 'Employee';
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,60 +23,144 @@ class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                Container(
-                  child: Image.asset(
-                    'assets/logo2.png',
-                    width: 200,
-                    height: 400,
-                  ),
+          child: Column(
+            children: [
+              Container(
+                child: Image.asset(
+                  'assets/goo1.png',
+                  width: 200,
+                  height: 300,
                 ),
-                Row(
-                  children: [
-                    Align(
-                      alignment: Alignment(-1, 0),
-                      child: Text(
-                        ' Sign in as',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+              ),
+              Row(
+                children: [
+                  Align(
+                    alignment: Alignment(-1, 0),
+                    child: Text(
+                      ' Sign in as',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Container(
-                      child: DropdownButton<String>(
-                        // dropdownColor: Colors.purple[200],
-                        elevation: 4,
-                        icon: Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.black,
-                        ),
-                        items:
-                            emp.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            // Inside List Value which i have menttioned Above as emp ['Employee','Client','Partner']
-                            child: Text(
-                              value,
-                              style: TextStyle(color: Colors.blue),
-                            ),
+                  ),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: DropdownButton(
+                        // Initial Value
+                        value: dropDownValue,
+                        // Drop Down Arrow Icon
+                        icon: Icon(Icons.arrow_drop_down),
+                        // Array list of Items
+                        items: emp.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items),
                           );
                         }).toList(),
+                        // After Selecting the desired option, it will change button value to selected value
                         onChanged: (String? value) {
-                          // This is called when the user selects an item.
                           setState(() {
-                            defaultValue = value!;
+                            dropDownValue = value!;
                           });
                         },
                       ),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '  Sign in to your account',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                'User ID',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      label: Text('Enter your User ID'),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      fillColor: Colors.grey.shade200,
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple)),
+                      filled: true),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    label: Text('Enter your Password'),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
+                    fillColor: Colors.grey.shade200,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple)),
+                    filled: true,
+                    suffixIcon: Icon(
+                      Icons.visibility_sharp,
+                      color: Colors.purple,
+                    ),
+                  ),
+                ),
+              ),
+              CheckboxListTile(
+                  activeColor: Colors.purple,
+                  value: isChecked,
+                  title: Text('Remember me'),
+                  controlAffinity: ListTileControlAffinity.leading,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      isChecked = value!;
+                    });
+                  }),
+              SizedBox(height: 20),
+              Container(
+                child: Text(
+                  'Forgot User ID or Password?',
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Sign In'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text('Sign in With OTP'),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue.shade800),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),

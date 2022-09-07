@@ -23,25 +23,29 @@ class _DropDownState extends State<DropDown> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          DropdownButton(
-            // Initial Value
-            value: dropDownValue,
-            // Drop Down Arrow Icon
-            icon: Icon(Icons.arrow_drop_down),
-            // Array list of Items
-            items: items.map((String items) {
-              return DropdownMenuItem(
-                value: items,
-                child: Text(items),
-              );
-            }).toList(),
-            // After Selecting the desired option, it will change button value to selected value
-            onChanged: (String? value) {
-              setState(() {
-                dropDownValue = value!;
-              });
-            },
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: DropdownButton(
+              // Initial Value
+              value: dropDownValue,
+              // Drop Down Arrow Icon
+              icon: Icon(Icons.arrow_drop_down),
+              // Array list of Items
+              items: items.map((String items) {
+                return DropdownMenuItem(
+                  value: items,
+                  child: Text(items),
+                );
+              }).toList(),
+              // After Selecting the desired option, it will change button value to selected value
+              onChanged: (String? value) {
+                setState(() {
+                  dropDownValue = value!;
+                });
+              },
+            ),
           ),
         ],
       ),
