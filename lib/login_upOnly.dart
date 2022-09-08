@@ -95,14 +95,15 @@ class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: TextFormField(
                   decoration: InputDecoration(
-                      label: Text('Enter your User ID'),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      fillColor: Colors.grey.shade200,
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepPurple)),
-                      filled: true),
+                    label: Text('Enter your User ID'),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    fillColor: Colors.grey.shade200,
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple)),
+                    filled: true,
+                  ),
                 ),
               ),
               SizedBox(
