@@ -9,6 +9,8 @@ class LoginUpOnly2 extends StatefulWidget {
 
 class _LoginUpOnly2State extends State<LoginUpOnly2> {
   bool isChecked = false;
+  List<String> emp = ['Employee', 'Client', 'Manager'];
+  String dropDownValue = 'Employee';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,6 +54,37 @@ class _LoginUpOnly2State extends State<LoginUpOnly2> {
                       // To add a DropDown here
                       // DropdownButton(items: , onChanged: onChanged)
                     ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    top: 120,
+                    left: 176,
+                  ),
+                  child: DropdownButton(
+                    // Initial Value
+                    value: dropDownValue,
+                    // Drop Down Arrow Icon
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                      color: Colors.indigo,
+                    ),
+                    // Array list of Items
+                    items: emp.map((String items) {
+                      return DropdownMenuItem(
+                        value: items,
+                        child: Text(items),
+                      );
+                    }).toList(),
+                    // After Selecting the desired option, it will change button value to selected value
+                    onChanged: (String? value) {
+                      setState(() {
+                        dropDownValue = value!;
+                      });
+                    },
+                    // dropdownColor: Colors.indigo,
                   ),
                 ),
               ),
@@ -146,8 +179,9 @@ class _LoginUpOnly2State extends State<LoginUpOnly2> {
                         'Sign In',
                         style: TextStyle(fontSize: 15),
                       ),
-                      style:
-                          ElevatedButton.styleFrom(minimumSize: Size(40, 40)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(40, 40),
+                      ),
                     ),
                     ElevatedButton(
                       onPressed: () {},
