@@ -15,8 +15,9 @@ class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        // Background Image
         image: DecorationImage(
-          image: AssetImage('assets/login.png'),
+          image: AssetImage('assets/bgImage.jpeg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -27,9 +28,9 @@ class _LoginScreenUpOnlyState extends State<LoginScreenUpOnly> {
             children: [
               Container(
                 child: Image.asset(
-                  'assets/goo1.png',
+                  'assets/UpOnly_logo.jpeg',
                   width: 200,
-                  height: 300,
+                  height: 260,
                 ),
               ),
               Row(
