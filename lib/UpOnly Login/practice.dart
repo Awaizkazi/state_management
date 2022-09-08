@@ -12,27 +12,34 @@ class _DropState extends State<Drop> {
   String selectedValue = 'Four';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 90,vertical: 140),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10)),
 
-      // dropdown below..
-      child: DropdownButton<String>(
-        value: selectedValue,
-        onChanged: (String? Value) => setState(() => selectedValue = Value!),
-        items: items
-            .map<DropdownMenuItem<String>>(
-                (String value) => DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    ))
-            .toList(),
+          // dropdown below..
+          child: DropdownButton<String>(
+            value: selectedValue,
+            onChanged: (String? Value) =>
+                setState(() => selectedValue = Value!),
+            items: items
+                .map<DropdownMenuItem<String>>(
+                    (String value) => DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        ))
+                .toList(),
 
-        // add extra sugar..
-        icon: Icon(Icons.arrow_drop_down),
-        iconSize: 42,
-        underline: SizedBox(),
+            // add extra sugar..
+            icon: Icon(Icons.arrow_drop_down),
+            iconSize: 42,
+            underline: SizedBox(),
+          ),
+        ),
       ),
     );
   }

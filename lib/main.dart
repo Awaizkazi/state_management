@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         unselectedWidgetColor: Colors.grey,
       ),
-      home: const Drop(),
+      home: const LoginUpOnly2(),
     );
   }
 }
