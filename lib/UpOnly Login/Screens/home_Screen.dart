@@ -1,5 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:state_management/UpOnly%20Login/Screens/landingScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,27 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff1E294E),
-      body: Container(
-        child: SafeArea(
-          child: Container(
-            child: Center(
-              child: Text(
-                'Animated Bottom Navigation Bar',
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              ),
-            ),
-          ),
-          
-        ),
+      body: SafeArea(
+        child: LandingScreen(),
       ),
       bottomNavigationBar: buildBottomNavigation(),
-      
     );
   }
 
   // Animated Bottom Navigation Bar
   Widget buildBottomNavigation() {
-    return BottomNavyBar(animationDuration: Duration(microseconds: 500),
+    return BottomNavyBar(
+      animationDuration: Duration(microseconds: 500),
       backgroundColor: Color.fromARGB(255, 234, 203, 240),
       itemCornerRadius: 10,
       selectedIndex: index,
