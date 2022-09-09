@@ -5,7 +5,9 @@ import 'package:state_management/login_upOnly.dart';
 import 'package:state_management/screen1.dart';
 import '../services.dart';
 import '../text_moving.dart';
-import 'UpOnly Login/login_UpOnly2.dart';
+import 'UpOnly Login/Screens/BorderBox.dart';
+import 'UpOnly Login/Screens/home_Screen.dart';
+import 'UpOnly Login/Screens/login_UpOnly2.dart';
 import 'UpOnly Login/practice.dart';
 import 'dropDown.dart';
 
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         unselectedWidgetColor: Colors.grey,
       ),
-      home: const LoginUpOnly2(),
+      home: const HomeScreen(),
     );
   }
 }
