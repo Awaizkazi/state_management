@@ -36,12 +36,20 @@ class _LandingScreenState extends State<LandingScreen> {
                       ),
                     ),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.notifications,
-                      size: 35,
-                      color: Colors.white,
+                  Text(
+                    'Good Morning',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, right: 10),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.notifications,
+                        size: 35,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
