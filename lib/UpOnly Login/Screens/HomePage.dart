@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:state_management/UpOnly%20Login/Screens/BorderBox.dart';
 
-class LandingScreen extends StatefulWidget {
-  const LandingScreen({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<LandingScreen> createState() => _LandingScreenState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _LandingScreenState extends State<LandingScreen> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -52,6 +52,7 @@ class _LandingScreenState extends State<LandingScreen> {
                       ),
                     ),
                   ),
+                  buildingCard(),
                 ],
               ),
             ),
@@ -61,5 +62,10 @@ class _LandingScreenState extends State<LandingScreen> {
     );
   }
 
-  Widget buildingCard() {}
+  Widget buildingCard() {
+    BorderRadius.circular(12);
+    return Container(
+      child: Card(),
+    );
+  }
 }
