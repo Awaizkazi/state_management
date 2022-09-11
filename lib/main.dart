@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:state_management/UpOnly%20Login/Screens/HomePage.dart';
 import 'package:state_management/login_upOnly.dart';
 // import 'package:flutter/services.dart';
 import 'package:state_management/screen1.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         unselectedWidgetColor: Colors.grey,
       ),
-      home: Practice(),
+      home: HomeScreen(),
     );
   }
 }

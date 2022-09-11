@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: size.width,
         height: size.height,
-        child: Column(
+        child: Stack(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 10, left: 20),
@@ -52,10 +52,12 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  buildingCard(),
+                  // buildingCard(),
                 ],
               ),
             ),
+            // Card in that Widget
+            buildingCard(),
           ],
         ),
       ),
@@ -64,8 +66,19 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildingCard() {
     BorderRadius.circular(12);
-    return Container(
-      child: Card(),
+    return Padding(
+      padding: const EdgeInsets.only(top: 90),
+      child: Container(
+        margin: EdgeInsets.only(top: 60),
+        width: 500,
+        height: 456,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }
