@@ -60,4 +60,6 @@ class _LandingScreenState extends State<LandingScreen> {
       ),
     );
   }
+
+  Widget buildingCard() {}
 }

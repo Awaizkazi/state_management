@@ -9,6 +9,7 @@ import '../text_moving.dart';
 import 'UpOnly Login/Screens/BorderBox.dart';
 import 'UpOnly Login/Screens/home_Screen.dart';
 import 'UpOnly Login/Screens/login_UpOnly2.dart';
+import 'UpOnly Login/Screens/practice.dart';
 import 'UpOnly Login/practice.dart';
 import 'dropDown.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         unselectedWidgetColor: Colors.grey,
       ),
-      home: const HomeScreen(),
+      home: Practice(),
     );
   }
 }
