@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:state_management/UpOnly%20Login/Screens/BorderBox.dart';
 
@@ -38,13 +36,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  Text(
-                    'Good Morning',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Good Morning',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
                   ),
                   Spacer(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, right: 10),
+                    padding: EdgeInsets.only(top: 10, right: 10),
                     child: IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -84,7 +85,10 @@ class _HomePageState extends State<HomePage> {
             ),
             // White Card in that Widget
             buildingCard(),
+            buildingCard1(),
             buildingCard2(),
+            buildingCard3(),
+            buildingCard4(),
           ],
         ),
       ),
@@ -112,26 +116,206 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildingCard2() {
-    return ListView.builder(
-        itemCount: 4, // the length
-        itemBuilder: (context, index) {
-          return Container(
-            padding: EdgeInsets.only(bottom: 8),
-            child: Card(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ListTile(
-                    leading: FlutterLogo(size: 56.0),
-                    title: Text('Item 1'),
-                    subtitle: Text('Item 1 subtitle'),
-                    trailing: Icon(Icons.access_alarm),
+  Widget searchBar() {
+    return Container(
+      child: Column(
+        children: [Row()],
+      ),
+    );
+  }
+
+  Widget buildingCard1() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 210, bottom: 10, left: 20, right: 20),
+      child: Container(
+        width: 700,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 70, 9, 29),
+              Color.fromARGB(255, 233, 151, 179)
+            ],
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  '  Call Module',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
                   ),
-                ],
-              ),
+                ),
+                Text(
+                  '  To being calling, get lead \n  information here. ',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
             ),
-          );
-        });
+            Image.asset(
+              'assets/call.png',
+              height: 50,
+              width: 80,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildingCard2() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 305, bottom: 10, left: 20, right: 20),
+      child: Container(
+        width: 700,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(255, 49, 44, 6), Colors.yellowAccent],
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  '  F2F',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  '  Have you met in person?\n  Update here.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+            Image.asset(
+              'assets/F2F.png',
+              height: 50,
+              width: 80,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildingCard3() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 400, bottom: 10, left: 20, right: 20),
+      child: Container(
+        width: 700,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [Color.fromARGB(255, 2, 60, 5), Colors.greenAccent],
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  '  CRM',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+                Text(
+                  '  Has the lead to become a\n  client? Update here',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+            Image.asset(
+              'assets/CRM.png',
+              height: 50,
+              width: 80,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildingCard4() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 500, bottom: 10, left: 20, right: 20),
+      child: Container(
+        width: 700,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [Colors.purple, Colors.deepPurple],
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  '  HCMS',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                Text(
+                  '  Health Care\n  Management System',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ],
+            ),
+            Image.asset(
+              'assets/HCMS.png',
+              height: 50,
+              width: 80,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
