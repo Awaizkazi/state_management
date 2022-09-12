@@ -124,7 +124,6 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.only(top: 150, bottom: 10, left: 20, right: 20),
       child: Container(
         height: 45,
-
         child: TextFormField(
           decoration: InputDecoration(
             prefixIcon: Icon(
@@ -133,9 +132,7 @@ class _HomePageState extends State<HomePage> {
               size: 40,
             ),
             labelText: "Search",
-            labelStyle: TextStyle(
-              color: Colors.grey.shade800,fontSize: 20
-            ),
+            labelStyle: TextStyle(color: Colors.grey.shade800, fontSize: 20),
             hintText: 'Search item',
             hintStyle: TextStyle(
               color: Colors.black,
