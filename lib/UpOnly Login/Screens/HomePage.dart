@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 10, left: 20),
+              padding: const EdgeInsets.only(top: 8, left: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Positioned(
-              top: 60,
+              top: 53,
               left: 100,
               child: Text(
                 'Kazi',
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Positioned(
-              top: 90,
+              top: 76,
               left: 30,
               child: Text(
                 'UpOnly \nWelcomes You!',
@@ -84,7 +84,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // White Card in that Widget
+
             buildingCard(),
+            // SearchBar
+            searchBar2(),
             buildingCard1(),
             buildingCard2(),
             buildingCard3(),
@@ -116,10 +119,43 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget searchBar() {
-    return Container(
-      child: Column(
-        children: [Row()],
+  Widget searchBar2() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 150, bottom: 10, left: 20, right: 20),
+      child: Container(
+        height: 45,
+
+        child: TextFormField(
+          decoration: InputDecoration(
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.grey,
+              size: 40,
+            ),
+            labelText: "Search",
+            labelStyle: TextStyle(
+              color: Colors.grey.shade800,fontSize: 20
+            ),
+            hintText: 'Search item',
+            hintStyle: TextStyle(
+              color: Colors.black,
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10.0),
+              ),
+              borderSide: BorderSide(
+                color: Colors.white,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              borderSide: BorderSide(color: Colors.white),
+            ),
+            fillColor: Colors.white,
+            filled: true,
+          ),
+        ),
       ),
     );
   }

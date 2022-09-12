@@ -11,9 +11,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int index = 0;
+  int _currentIndex = 0;
+  int _currentSelected = 0;
+  _onSelectItem(int inxex) {
+    setState(() {
+      _currentSelected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+  
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff1E294E),
@@ -30,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       animationDuration: Duration(microseconds: 500),
       backgroundColor: Color.fromARGB(255, 234, 203, 240),
       itemCornerRadius: 10,
-      selectedIndex: index,
+      selectedIndex: _currentIndex,
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(
           icon: Icon(Icons.home),
@@ -63,7 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
           textAlign: TextAlign.center,
         ),
       ],
-      onItemSelected: (index) => setState(() => this.index = index),
+      onItemSelected: (index) => setState(() {
+        _currentIndex = index;
+      }),
     );
   }
 }
