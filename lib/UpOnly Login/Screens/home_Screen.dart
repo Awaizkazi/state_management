@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:state_management/UpOnly%20Login/Screens/HRMS_screens.dart';
 import 'package:state_management/UpOnly%20Login/Screens/HomePage.dart';
 import 'package:state_management/UpOnly%20Login/Screens/dashboard_screen.dart';
 import 'package:state_management/UpOnly%20Login/Screens/info_screen.dart';
+
+import 'dial_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
   List Pages = [
     HomePage(),
     InfoScreen(),
-    DashBoard(),
+    DashBoard_Screen(),
+    HRMS_Screen(),
+    Dial_Screen(),
   ];
   @override
   Widget build(BuildContext context) {

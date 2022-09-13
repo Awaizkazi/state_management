@@ -7,6 +7,7 @@ import 'package:state_management/screen1.dart';
 import '../services.dart';
 import '../text_moving.dart';
 import 'UpOnly Login/Screens/BorderBox.dart';
+import 'UpOnly Login/Screens/HRMS_screens.dart';
 import 'UpOnly Login/Screens/dashboard_screen.dart';
 import 'UpOnly Login/Screens/home_Screen.dart';
 import 'UpOnly Login/Screens/info_screen.dart';

@@ -48,7 +48,9 @@ class _LoginUpOnly2State extends State<LoginUpOnly2> {
                         child: Text(
                           'Sign in as',
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w800),
+                            fontSize: 25,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                       ),
                       // To add a DropDown here
