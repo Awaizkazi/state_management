@@ -1,89 +1,123 @@
+
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
-
-void main() => runApp(navyBar());
-
-class navyBar extends StatelessWidget {
+ 
+class MyBottomNavyBar extends StatefulWidget {
+  const MyBottomNavyBar({Key? key}) : super(key: key);
+ 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: MyHomePage(),
-    );
-  }
+  _BottomNavyBarState createState() => _BottomNavyBarState();
 }
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+ 
+class _BottomNavyBarState extends State<MyBottomNavyBar> {
+  PageController _pageController = PageController();
   int _currentIndex = 0;
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+ 
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Flutter Demo")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text("Bottom_Navy_Bar"),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      body: PageView(
+        controller: _pageController,
+        children: <Widget>[
+          Container(
+            child: const Center(
+              child: Text(
+                "Home",
+                style: TextStyle(color: Colors.white, fontSize: 30.0),
+              ),
+            ),
+            color: Colors.red,
+          ),
+          Container(
+            child: const Center(
+              child: Text(
+                "Search",
+                style: TextStyle(color: Colors.white, fontSize: 30.0),
+              ),
+            ),
+            color: Colors.green,
+          ),
+          Container(
+            child: const Center(
+              child: Text(
+                "Settings",
+                style: TextStyle(color: Colors.white, fontSize: 30.0),
+              ),
+            ),
+            color: Colors.yellow,
+          ),
+          Container(
+            child: const Center(
+              child: Text(
+                "Account",
+                style: TextStyle(color: Colors.white, fontSize: 30.0),
+              ),
+            ),
+            color: Colors.blue,
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavyBar(
+        containerHeight: 55.0,
+        backgroundColor: Colors.white70,
         selectedIndex: _currentIndex,
-        showElevation: true,
+        showElevation: false,
         itemCornerRadius: 24,
         curve: Curves.easeIn,
-        onItemSelected: (index) => setState(() => _currentIndex = index),
+        onItemSelected: (index) => setState(() {
+          _currentIndex = index;
+          _pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 100),
+              curve: Curves.easeIn);
+        }),
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
-            icon: Icon(Icons.apps),
-            title: Text('Home'),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.apps),
+            title: const Text('Home'),
             activeColor: Colors.red,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.people),
-            title: Text('Users'),
-            activeColor: Colors.purpleAccent,
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.search_outlined),
+            title: const Text('Search'),
+            activeColor: Colors.green,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.message),
-            title: Text(
-              'Messages test for mes teset test test ',
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.settings),
+            title: const Text(
+              'Settings ',
             ),
-            activeColor: Colors.pink,
+            activeColor: Colors.yellow,
             textAlign: TextAlign.center,
           ),
           BottomNavyBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
+            inactiveColor: Colors.black,
+            icon: const Icon(Icons.account_box),
+            title: const Text('Account'),
             activeColor: Colors.blue,
             textAlign: TextAlign.center,
           ),
         ],
       ),
     );
+  }
+ 
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 }

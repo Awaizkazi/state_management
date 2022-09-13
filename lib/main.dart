@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         unselectedWidgetColor: Colors.grey,
       ),
-      home: DashBoard(),
+      home: HomeScreen(),
     );
   }
 }

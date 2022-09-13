@@ -16,7 +16,7 @@ class _Screen1State extends State<Screen1> {
 //DataType objectName = className
   Services serve = Get.find<Services>();
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {  
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
