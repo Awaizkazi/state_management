@@ -12,11 +12,12 @@ class _InfoScreenState extends State<InfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 10,
           backgroundColor: Color.fromARGB(231, 29, 42, 85),
           centerTitle: true,
           title: Text(
             'Information',
-            style: TextStyle(fontSize: 27),
+            style: TextStyle(fontSize: 25),
           ),
         ),
         body: Column(
@@ -75,7 +76,7 @@ class _InfoScreenState extends State<InfoScreen> {
                       'About the name!',
                       style: TextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w900,
                         color: Color(0xff1E294E),
                       ),
                     ),
@@ -83,11 +84,11 @@ class _InfoScreenState extends State<InfoScreen> {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
-                      'We called the company and the UPONLY\nas it is combination of two words ,UP and ONLY\nas we constantly work trielessly to ensure we\nare always UP,ONLY in all conditions',
+                      'We called the company and the App UPONLY\nas it is combination of two words ,UP andONLY\nas we constantly work trielessly to ensure we\nare always UP,ONLY in all conditions',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xff1E294E),
+                        color: Color.fromARGB(255, 89, 24, 100),
                       ),
                     ),
                   ),
