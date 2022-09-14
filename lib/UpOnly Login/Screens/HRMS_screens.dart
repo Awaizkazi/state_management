@@ -14,15 +14,24 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
       backgroundColor: Color(0xff1E294E),
       appBar: AppBar(
         backgroundColor: Color(0xff1E294E),
-        elevation: 0,
+        elevation: 10,
+        leading: Icon(
+          Icons.lock_open_outlined,
+          size: 30,
+          color: Colors.yellow,
+        ),
         title: Text('HRMS'),
-        toolbarHeight: 200,
         actions: [
-          Icon(Icons.search),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.question_mark_outlined,
+                color: Colors.yellow,
+              ))
         ],
         centerTitle: true,
       ),
-      body: SafeArea(
+      body: SafeArea( 
         child: Container(
           // width: 500,
           height: 600,
@@ -41,9 +50,19 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
                 Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Expanded(child: card4('Expense')),
-                    Expanded(child: card4('Attendance')),
-                    Expanded(child: card4('Track')),
+                    Expanded(
+                      child: card4(
+                          'Attendance', 'assets/hrms_images/Attendance.png'),
+                    ),
+                    Expanded(
+                      child: card4(
+                        'Expense',
+                        'assets/hrms_images/pay.png',
+                      ),
+                    ),
+                    Expanded(
+                      child: card4('Task', 'assets/hrms_images/task.png'),
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -51,21 +70,22 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
                 ),
                 Row(
                   children: [
-                    Expanded(child: card4('Leaves')),
-                    Expanded(child: card4('Pay Slip')),
-                    Expanded(child: card4('Letter')),
+                    Expanded(
+                        child:
+                            card4('Leaves', 'assets/hrms_images/Leaves.png')),
+                    Expanded(
+                        child: card4('Payslip', 'assets/hrms_images/pay.png')),
+                    Expanded(
+                        child:
+                            card4('Letter', 'assets/hrms_images/Letter.png')),
                   ],
                 ),
                 Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    card4(
-                      'Separtion',
-                    ),
-                    card4(
-                      'My DRs',
-                    ),
+                    card4('Separtion', 'assets/hrms_images/Seperation.png'),
+                    card4('My DRs', 'assets/hrms_images/DRs.png'),
                   ],
                 ),
               ],
@@ -78,6 +98,7 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
 
   Widget card4(
     String heding,
+    String image,
   ) {
     return Container(
       child: SingleChildScrollView(
@@ -88,32 +109,32 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
               height: 110,
               child: Card(
                 shadowColor: Colors.grey,
-                elevation: 10,
-                color: Colors.white,
+                elevation: 25,
                 shape: CircleBorder(),
                 child: SizedBox(
-                  height: 30,
-                  width: 30,
-                  child: Image.asset('assets/CRM.png'),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Image.asset(
+                      image,
+                      width: 50,
+                    ),
+                  ),
                 ),
               ),
             ),
             Text(
               heding,
               style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color(
-                    0xff1E294E,
-                  )),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(
+                  0xff1E294E,
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Imageforcard() {
-    Image.asset('assets/CRM.png');
   }
 }
