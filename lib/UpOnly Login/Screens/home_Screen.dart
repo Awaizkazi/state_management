@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   List Pages = [
     HomePage(),
-    InfoScreen(),
+    InfoScreen(), 
     DashBoard_Screen(),
     HRMS_Screen(),
     Dial_Screen(),
