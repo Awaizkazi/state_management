@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:state_management/UpOnly%20Login/Screens/HomePage.dart';
 import 'package:state_management/login_upOnly.dart';
@@ -18,8 +19,10 @@ import 'dropDown.dart';
 
 void main() {
   // Status Bar Color Change
-  // SystemChrome.setSystemUIOverlayStyle(
-  //     SystemUiOverlayStyle(statusBarColor: Colors.blue));
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+  );
+
   runApp(MyApp());
 }
 

@@ -8,13 +8,16 @@ class HRMS_Screen extends StatefulWidget {
 }
 
 class _HRMS_ScreenState extends State<HRMS_Screen> {
+  List<int> eCode = [11239];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Color(0xff1E294E),
       appBar: AppBar(
         backgroundColor: Color(0xff1E294E),
         elevation: 10,
+        toolbarHeight: 200,
         leading: Icon(
           Icons.lock_open_outlined,
           size: 30,
@@ -23,15 +26,34 @@ class _HRMS_ScreenState extends State<HRMS_Screen> {
         title: Text('HRMS'),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.question_mark_outlined,
-                color: Colors.yellow,
-              ))
+            onPressed: () {},
+            icon: Icon(
+              Icons.question_mark_outlined,
+              color: Colors.yellow,
+            ),
+          ),
         ],
         centerTitle: true,
-      ),
-      body: SafeArea( 
+        flexibleSpace: Container(
+          child: Column(
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage('assets/coatpantPhoto.jpeg'),
+                radius: 50,
+              ),
+              SizedBox(
+                height: 70,
+              ),
+              Text(
+                'Hello Code $eCode',
+                style: TextStyle(color: Colors.yellow, fontSize: 26),
+              ),
+            ],
+          ),
+        ),
+      ),  
+      body: SafeArea(
         child: Container(
           // width: 500,
           height: 600,

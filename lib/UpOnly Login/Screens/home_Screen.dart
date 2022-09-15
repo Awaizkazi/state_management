@@ -4,7 +4,6 @@ import 'package:state_management/UpOnly%20Login/Screens/HRMS_screens.dart';
 import 'package:state_management/UpOnly%20Login/Screens/HomePage.dart';
 import 'package:state_management/UpOnly%20Login/Screens/dashboard_screen.dart';
 import 'package:state_management/UpOnly%20Login/Screens/info_screen.dart';
-
 import 'dial_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -32,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         // Current Index by Dafault here we set the home page
         selectedIndex: currentIndex,
         animationDuration: Duration(microseconds: 300),
+        backgroundColor: Color.fromARGB(255, 235, 210, 239),
         onItemSelected: (index) {
           setState(() {
             currentIndex = index;
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavyBarItem(
             icon: Icon(Icons.call),
-            title: Text('Persons'),
+            title: Text('Dial'),
             activeColor: Colors.grey.shade900,
             textAlign: TextAlign.center,
           ),
